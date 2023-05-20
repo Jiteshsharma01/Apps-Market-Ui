@@ -10,12 +10,34 @@ body {
 }
 
 header {
-    background: linear-gradient(to top, #3204fdad, #0729fa4a), url(assets/images/woman-using-laptop/woman-using-laptop1.png) no-repeat left center;
-    filter: brightness(80%);
-    background-size: cover;
+    background-image: linear-gradient(45deg, black, transparent);
     height: 100vh;
 }
 
+.content-box {
+    background-image: linear-gradient(45deg, black, transparent);
+    position: relative;
+    text-align: center;
+}
+
+.content-box .bg-img{
+    background-image: linear-gradient(336deg, #3c2dd7a3, #4131e2f7);
+    background-size: cover;
+    opacity: 0.8;
+    filter: brightness(80%);
+}
+  
+.top-left {
+    position: absolute;
+    padding: 1rem 1rem 0;
+    top: 0px;
+}
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 header nav.navbar{
     background-color: transparent !important;
 }
@@ -49,6 +71,11 @@ header nav.navbar{
 
 header .description-box{
     color: white;
+    margin-top: 3rem;
+}
+header .description-box .app-desc{
+    text-align: left;
+    width: 50%;
 }
 
 .box-2 .img2{
@@ -68,18 +95,23 @@ header .description-box{
     box-shadow: 0px 50px 76px #0000000D;
 }
 
-.trapezoid-l2r{
+.service-img-box .trapezoid-l2r{
     border-left: 10rem solid #0D13D7;
     border-top: 5rem solid transparent;
     border-bottom: 5rem solid transparent;
     width: 0;
     height: 20rem;
     padding: 0;
-    margin-right: -6vw;
+    margin-right: -4.5vw;
+}
+
+#whyUs .service-desc-box button.btn{
+    background: #FFFFFF;
+    border: 1px solid #0D13D7;
 }
 
 /* goals */
-#goals .container h2, p.goals-desc{
+#goals .container h2, #goals .container p.goals-desc{
     width: 60%;
 }
 #goals .active-goal{
@@ -108,17 +140,49 @@ header .description-box{
     transform: translateX(0);
 }
 
+#myCarousel .carousel-indicators > li {
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+    background-color: #1453FF;
+}
+
+#portfolio .trapezoid-r2l{
+    border-right: 10rem solid #0D13D7;
+    border-top: 5rem solid transparent;
+    border-bottom: 5rem solid transparent;
+    width: 0;
+    height: 20rem;
+    padding: 0;
+}
+
 /* customer */
 #customer .container .read-more-btn{
     height: fit-content;
     padding: 12px;
     background: #F3F3F3;
     border-radius: 16px;
+    width: auto;
+}
+
+#customer .container .customer-head-box{
+    display: flex;
+    flex-direction: row;
 }
 
 #customer .container .customer-desc-box{
     background: #EFEFFE 0% 0% no-repeat padding-box;
     box-shadow: 0px 3px 6px #00000029;
+}
+#customer .container .customer-desc-box img.customer-desk-img{
+    display: block;
+}
+#customer .container .customer-desc-box img.customer-mob-img{
+    display: none;
+}
+#customer .container .customer-desc-box .customer-grade{
+    display: flex;
+    width: 60%;
 }
 
 #customer .container .customer-grade img{
@@ -171,10 +235,6 @@ header .description-box{
     cursor: pointer;
 }
   
-.floating-box form.example button:hover {
-    background: #0b7dda;
-}
-  
 .floating-box form.example::after {
     content: "";
     clear: both;
@@ -198,6 +258,9 @@ footer.mainfooter{
 .footer-middle h4{
     font-size: 1rem;
     font-weight: 700;
+}
+.footer-link-box{
+    width: 95%;
 }
 
 .footer-pad .logo{
@@ -225,6 +288,16 @@ footer.mainfooter{
 .footer-middle .copyright, .footer-middle .policy-box{
     width: fit-content;
 }
+.footer-middle .copyright-box{
+    display: flex;
+    flex-direction: row;
+}
+.footer-middle .copyright-box .policy-box{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 
 p{
     font-size: 0.8rem; 
@@ -237,6 +310,9 @@ p{
 }
 .w-60{
     width: 60%;
+}
+.w-80{
+    width: 80%;
 }
 .w-85{
     width: 85%;
@@ -275,10 +351,206 @@ p{
 }
 
 @media (max-width: 768px) {
+    header{
+        height: auto;
+    }
+    header nav.navbar{
+        z-index: 5;
+    }
+    .navbar-collapse.collapse.show{
+        background: white;
+    }
+    .navbar-expand-lg .navbar-nav{
+        width: 100vw;
+        background: white;
+        padding: 12px;
+    }
+    header nav.navbar{
+        padding: 0;
+        margin-top: 0.5rem;
+    }
+    header .navbar-brand{
+        margin-left: 1rem;
+    }
+    .nav-item .nav-link{
+        width: fit-content;
+        margin: auto;
+    }
+    header .description-box{
+        margin-top: 1rem;
+    }
+    header .description-box .app-desc{
+        width: 100%;
+    }
+    header .description-box .mobile-images{
+        display: none !important;
+    }
+
+    .nav-item .nav-link{
+        color: black;
+    }
+    .content-box .bg-img{
+        width: 56vh;
+        height: 60vh;
+        background-image: linear-gradient(336deg, #3c2dd7a3, #4131e2f7);
+        opacity: 0.8;
+        filter: brightness(80%);
+        background-size: cover;
+    }
+
+    /* services, whyUs & portfolio */
+    #services .container h2, #whyUs .container h2, #portfolio .container h2{
+        width: auto;
+    }
+
+    #services .container p.services-desc, #whyUs .container p.services-desc, #portfolio .container p{
+        font-size: 1rem;
+        width: auto;
+    }
+    #services .container .service-box p{
+        font-size: 1.2rem;
+    }
+    .service-img-box .trapezoid-l2r{
+        border-left: 6rem solid #0D13D7;
+        height: 18rem;
+        margin-right: -16.5vw;
+    }
+    
+    #whyUs .service-desc-box{
+        text-align: center;
+        margin: 0 2rem !important;
+    }
+    #whyUs .service-desc-box p{
+        font-size: 1rem;
+        padding-right: 0;
+    }
+
+    /* goals */
+    #goals .container h2, #goals .container p.goals-desc{
+        width: 90%;
+    }
+    #goals .container p.goals-desc{
+        font-size: 1rem;
+    }
+    #goals .active-goal{
+        background: #f3f3f3 0% 0% no-repeat padding-box;
+        box-shadow: 0px 50px 76px #0000000D;
+        border-radius: 70px 8px 70px 8px;
+        padding: 1.5rem 1rem 0.5rem;
+    }
+    #goals .goal-img{
+        width: 22%;
+    }
+
     .carousel-inner .carousel-item>div {
         display: none;
     }
     .carousel-inner .carousel-item>div:first-child {
         display: block;
+    }
+    .carousel-control-next, .carousel-control-prev{
+        display: none;
+    }
+
+    /* customer */
+    #customer .container .customer-head-box{
+        flex-direction: column;
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+    #customer .customer-head-box p{
+        font-size: 1rem;
+    }
+    #customer .container .customer-desc-box{
+        width: 90%;
+    }
+    #customer .container .customer-desc-box img.customer-desk-img{
+        display: none;
+    }
+    #customer .container .customer-desc-box img.customer-mob-img{
+        display: block;
+    }
+    #customer .container .customer-desc-box .customer-review-box{
+        text-align: center;
+    }
+    #customer .container .customer-desc-box .customer-grade{
+        width: auto;
+    }
+
+    /* floating-box */
+    #floating-section .floating-box{
+        top: 14vh;
+    }
+    #floating-section .floating-box{
+        width: 80%;
+    }
+
+    .floating-box .inner-floating-box{
+        padding: 1rem;
+        text-align: center;
+    }
+
+    .floating-box .description-box {
+        font-size: 0.9rem;
+        padding: 0;
+    }
+    .floating-box form.example input[type=email] {
+        width: 100%;
+    }
+    .floating-box form.example button {
+        position: absolute;
+        right: 8%;
+    }
+
+    /* footer */
+    .footer-pad .logo{
+        justify-content: center;
+        font-size: 2rem;
+    }
+    .footer-pad .logo img{
+        width: 12%;
+    }
+    .footer-pad .social-network{
+        width: 65%;
+        margin: auto;
+    }
+    .footer-link-box{
+        margin: auto;
+    }
+    .footer-middle .footer-link-box .social{
+        margin-top: 2rem;
+    }
+    .footer-middle .footer-link-box .social .footer-pad,
+    .footer-middle .footer-link-box .links .footer-pad,
+    .footer-middle .footer-link-box .support .footer-pad,
+    .footer-middle .footer-link-box .contact-us .footer-pad{
+        text-align: center;
+    }
+    .footer-middle .footer-link-box .social h4,
+    .footer-middle .footer-link-box .links h4,
+    .footer-middle .footer-link-box .support h4,
+    .footer-middle .footer-link-box .contact-us h4{
+        font-size: 1.2rem;
+    }
+
+    .footer-middle .links .footer-pad ul.list-unstyled li{
+        margin-bottom: 0.5rem;
+    }
+
+    .footer-middle .copyright-box{
+        flex-direction: column;
+        align-items: center;
+    }
+    .footer-middle .copyright-box .copyright, .copyright-box .policy-box p{
+        font-size: 1rem;
+    }
+    .footer-middle .copyright-box .copyright{
+        margin-bottom: 0.5rem;
+    }
+    .footer-middle .copyright-box .policy-box{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 80%;
     }
 }
