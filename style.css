@@ -44,7 +44,12 @@ header {
 header nav.navbar{
     background-color: transparent !important;
 }
-
+header nav.navbar{
+    z-index: 5;
+}
+.navbar-collapse.collapse.show{
+    background: white;
+}
 .nav-item .nav-link{
     color: white;
     font-family: 'Roboto', sans-serif;
@@ -353,15 +358,10 @@ p{
     }
 }
 
-@media (max-width: 768px) {
+@media only screen and (max-width: 767px) {
+    /* CSS styles for mobile devices */
     header{
         height: auto;
-    }
-    header nav.navbar{
-        z-index: 5;
-    }
-    .navbar-collapse.collapse.show{
-        background: white;
     }
     .navbar-expand-lg .navbar-nav{
         width: 100vw;
@@ -369,8 +369,9 @@ p{
         padding: 12px;
     }
     header nav.navbar{
-        padding: 0;
         margin-top: 0.5rem;
+        padding: 0;
+        max-width: 98%;
     }
     header .navbar-brand{
         margin-left: 1rem;
@@ -492,11 +493,8 @@ p{
     /* floating-box */
     #floating-section .floating-box{
         top: 14vh;
-    }
-    #floating-section .floating-box{
         width: 80%;
     }
-
     .floating-box .inner-floating-box{
         padding: 1rem;
         text-align: center;
@@ -564,5 +562,56 @@ p{
         justify-content: space-between;
         align-items: center;
         width: 80%;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+    /* CSS styles for tablet devices */
+    /* header */
+    header nav.navbar{
+        max-width: 98%;
+    }
+    .navbar-expand-lg .navbar-nav{
+        width: 100vw;
+        background: white;
+        padding: 12px;
+    }
+    .nav-item .nav-link{
+        color: black;
+    }
+    .nav-item .nav-link{
+        width: fit-content;
+        margin: auto;
+    }
+    header .description-box {
+        top: 5%;
+        left: 5%;
+        transform: none;
+    }
+    header .description-box .app-desc {
+        width: 70% !important;
+    }
+    header .description-box .mobile-images{
+        display: none !important;
+    }
+
+    #services .container h2, #whyUs .container h2, #portfolio .container h2{
+        width: 45%;
+    }
+    #services .container p.services-desc, #whyUs .container p.services-desc, #portfolio .container p{
+        width: 60%;
+    }
+
+    /* whyUs */
+    #whyUs .whyUs-desc{
+        justify-content: space-between;
+    }
+    #whyUs .whyUs-desc .service-desc-box{
+        position: relative;
+        left: 3vw;
+    }
+    /* floating-box */
+    #floating-section .floating-box{
+        top: 6vh;
     }
 }
